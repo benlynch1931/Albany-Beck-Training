@@ -1,6 +1,33 @@
 
-./Module\ 1\ Assessment\ -\ Revisit/
-./Module\ 1\ Assessment\ -\ Revisit/*
 
-./MODULE\ 1/ASSESSMENT/
-./MODULE\ 1/ASSESSMENT/*
+Module\ 1\ Assessment\ -\ Revisit/*
+
+
+MODULE\ 1/ASSESSMENT/
+
+MODULE\ 1/DEMOS/*
+MODULE\ 1/EXERCISES/*
+
+MODULE\ 1/PERSONAL\ EXERCISES/*
+
+MODULE\ 1/QUIZ\ QUESTIONS.java
+
+ALBANY\ BECK.iml
+
+MODULE\ 2/DEMOS/*
+MODULE\ 2/EXERCISES/*
+
+OracleExams/*
+out/**
+
+.DS_Store
+
+Testing.java
+TO\ DO.md
+
+.idea/**
+
+.name
+*.xml
+*.class
+*.docx

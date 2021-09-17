@@ -1,0 +1,458 @@
+What is a Program?
+-> Collection of methods and functions
+-> A piece of code 
+-> Takes input & gives output 
+-> A set of instructions 
+Types of Programming Languages:
+-> Procedural/Structured/Modular Programming Language
+    C Language
+    C++ (Partial)
+-> Object-Oriented 
+    Ruby, Java, Python, C#, C++ (Partial)
+-> Functional 
+   Scheme, Scala & Java (Since Java 8 - Partial)
+-> Scripting Languages
+   Bash, PHP, JavaScript, Python (Partial)
+Types of translators 
+1) Compiler (JDK)
+    
+    Checks whole code at one go 
+    
+2) Interpreter (JRE/JVM)
+    Interprets line-by-line
+JRE Vs JVM
+JVM : Java Virtual Machine 
+      
+      A specification 
+      
+JRE (Java Runtime Environment)
+ An implementation of JVM's specification
+ 
+ 
+Strongly typed and Weakly typed 
+Strongly typed - C, C++, C# and Java 
+Weakly typed : Python, JavaScript, PHP 
+List of Datatypes 
+1) Primitive 
+    a)  Boolean 
+    
+        boolean  - 1 byte or System dependent 
+        
+            true or false
+        
+    b) Integer  
+    
+        Name                Size in Bytes
+        -------------------------------------
+        byte                    1   = 8 bits    (2 pow 8 = 256) => -128 to +127
+        
+        short                   2   = 16 bits   (2 pow 16 = 65536) => -32768 to +32767
+        
+        int                     4
+        
+        long                    8
+        
+    
+    
+        byte a = 100; // VALID 
+                
+        byte b = 128; // Error
+        
+        byte c = (byte) 128; // VALID, because of explicit type casting
+        
+        System.out.println(c); // Output: -128
+        
+        byte d = (byte) 129; // VALID, because of explicit type casting
+        
+        System.out.println(d); // Output: -127
+                
+    c) Flooting point - Storing fractional values
+    
+        float  - 4 
+        
+        double - 8 
+        
+        
+        float x = 10.5; // INVALID 
+        
+        float x = (float) 10.5; // VALID 
+            
+        float y = 10.5F; // VALID 
+        
+        double z = 10.5; // VALID
+        
+        
+    d) Character - Store a single character
+    
+    
+        char - 2 bytes
+        
+        Java supports UNICODE (Universal character set)
+    
+    
+    Operators:
+    
+    
+    1) Arithmetic 
+    
+    
+        +, -, *, / and %
+    
+    
+    2) Assignment 
+    
+    
+        +=, -=, *=
+        
+        int a = 10;
+        
+        a = a + 10; => a += 10;
+        
+    
+    3) Relational 
+    
+    
+        <, >, <=, >=, != and ==
+    
+    
+        a = 10;
+        
+        b = "10";
+        
+        
+        (a == b) => true 
+        
+        
+        (a === b) => false
+        
+    
+    
+    
+    4) Boolean Logical 
+    
+        
+       & - AND
+       | - OR
+       
+       ! - NOT
+        
+    
+    
+    
+       && - Short-Circuit AND
+       
+       || - Short-Circuit OR
+        
+      a = 10;
+      
+      b = 20;
+      
+      c = 30;
+      
+      
+      (a > b & a>c)
+    
+      (a > b && a>c)
+      
+      a = 10;
+      
+      b = 0;
+      
+      
+      ((a==b) && (rem = a/b))
+      
+       
+    5) Unary Operator
+    
+       ++
+       
+       --
+        
+        
+        
+       int a = 10;
+       
+       int b = a++; // Postfix
+       
+       System.out.println(a); // Output: 11 
+       
+       System.out.println(b); // Output: 10 
+       
+       int b = ++a; // Prefix
+       
+       
+       int x = 100;
+       
+       System.out.println(x++); // 101
+       
+       
+    
+    6) Bitwise Operators - Low level operators normally used in Encryption & Decryption
+    
+        
+        &
+        
+        |
+        
+        ^
+        
+        >>
+        
+        <<
+        
+        >>>
+        
+        
+        
+        int x = 10;
+        
+        int y = 20;
+        
+        int c = x & y;
+        
+    
+  Control Statements/Structures
+  
+  
+  1) Conditional statements/If statements 
+  
+  
+     if(condition)
+        Statement1;
+        
+        
+     int a = 10;
+     
+     if(a == 100){
+        System.out.println("hello");
+        System.out.println("bye");        
+    }
+        
+        
+        
+    if(condition){
+        // TRUE
+    }   
+    else{
+      // FALSE
+    }
+    /////////////////////////////////   
+    
+    if(condition){
+        TRUE
+    }
+    else if(condition){
+        TRUE
+    }
+    else{
+    
+    }
+    
+    
+    ///////////
+    
+    Nested if statements
+    
+    
+    if(condition){
+    
+        if(condition){
+        
+        }
+    
+    }
+    
+    
+    
+    
+    ///////////////////////////////////////////
+    
+    
+    
+    int a = 10;
+    
+    if(a == 10){
+    
+        int b = 20;
+        
+        System.out.println(a);
+    
+    }
+    
+    System.out.println(a);
+    System.out.println(b);  // Error
+        
+     
+     
+  
+  2) Iteration statements/Loop constructs
+  
+  
+     1) while
+     
+     
+        while(condition){
+        
+        
+        }
+        
+        
+     
+     2) for 
+     
+        for(init; condition; increment/decrement){
+        }       
+     
+     3) do-while - Executes the statements at least once
+     
+        do{
+        
+            statements
+        }
+        while(condition);
+        
+        
+        
+        int i = 1; // Init
+        
+        while(i <= 10){ // Condition
+            System.out.println(i);
+            i++; // Increment
+        }
+        
+        
+        
+        
+        
+        
+        for(int i = 1; i <= 10; i++){
+           System.out.println(i);
+        }
+        
+        
+        /*
+        for( ; ; ){
+           System.out.println("Hello");
+        }
+        */
+        
+        
+        
+        //////////////////////////////////////////
+        
+        
+        int i = 1; // Init
+        
+        while(i <= 10){ // Condition
+        
+            if(i == 5){
+                break;
+            }
+            System.out.println(i);
+            i++; // Increment
+        }
+        
+        
+        // Output: 1-4
+        
+        /////////////////////////////////////////////////
+        int i = 1; // Init
+        
+        while(i <= 10){ // Condition
+            
+            if(i == 5){
+                i++;
+                continue; // sends the control to while condition
+            }
+            System.out.println(i);
+            i++; // Increment
+        }
+        
+        
+        // Output: 1-10 without 5
+        
+        
+        
+        
+        
+    Arrays:
+    
+        List or collection of similar data elements 
+        
+        
+        Note: Arrays are objects in Java
+        
+        Note: Arrays are fixed length
+        
+    Syntax:
+    
+        datatype[] arrayName = new datatype[size];
+        
+        
+        int[] a = new int[4];
+        
+        
+        a[0] = 10;
+        
+        a[1] = 10;
+        
+        //a[4] = 100; // ArrayIndexOutOfBoundsException
+        
+        
+        System.out.println(a[0]); // 10
+        
+        System.out.println(a[3]); // 0
+        
+        
+        integer => 0
+        
+        float/double => 0.0
+        
+        char => blankspace 
+        
+        boolean => false
+        
+        
+        
+        ////////////////////////////////
+        
+        String[] names = new String[4];
+        
+        
+        names[0] = "Kishore";
+        
+        names[1] = "Mike";
+        
+        System.out.println(names[3]); // null
+        
+        
+        
+        
+        
+        
+     
+     4) Enhanced for loop 
+     
+     
+        Syntax of Enhanced for loop 
+        
+        /////////////////////////////
+        
+        
+        for(datatype var : arrayName/collection){
+        
+        }
+        
+        for(String name : names){
+            System.out.println(name);
+        }
+        
+        for(int t : a){
+            System.out.println(t);
+        }
+     
+  
+  3) Termination statements/Jump Statements
+  
+    
+2) Class types/reference types
