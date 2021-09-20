@@ -188,6 +188,8 @@ A constraint is a rule which governs data
 3. PRIMARY KEY - 1 PER table
   `CONSTRAINT PK_Department PRIMARY KEY(dept_id)`
 
+  By default, MySQL uses a BTREE index to associate to PK
+
 4. FOREIGN KEY - Refers to a PK column of another table
   `CONSTRAINT FK_Employee FOREIGN KEY(dept_id) REFERENCES department(dept_id)`
 
@@ -222,6 +224,179 @@ A constraint is a rule which governs data
   )
 
 ```
+
+## Ordering
+
+By default, SQL will order by Primary Key, and in ASC order.
+
+
+## Subqueries
+
+What is a subquery/nested query?
+
+- A query enclosed in another query
+
+Write a query to display employee details whose salary is highest
+
+`SELECT * FROM employee WHERE SALARY = (SELECT max(SALARY FROM employee));`
+
+## Joins
+
+- Joins are used to extract data from multiple tables when possible
+  (When there are matching values in join tables)
+
+
+- Types of join
+
+1. Inner Join (FAQs)
+2. Outer Join
+3. Left Join (FAQs)
+4. Right Join (FAQs)
+5. Full Join (Syntax differs between db)
+6. Cartesian Join (akin. Mesh Network Topology)
+
+```
+  SELECT employee.employee_id, employee.ename, employee.salary, department.dept_id, department.d_name
+  FROM department INNER JOIN employee
+  ON department.dept_id = employee.department.id
+```
+
+Using ALIAS
+
+```
+SELECT e.employee_id, e.ename, e.salary, d.dept_id, d.d_name
+FROM department d INNER JOIN employee e
+ON d.dept_id = e.dep_id
+```
+
+CARTESIAN JOIN
+```
+SELECT * FROm department, employee;
+```
+
+
+## Aggregate Functions
+
+Functions that always return a single value result
+
+List of aggregate functions:
+
+1. sum
+2. max (returns max value of column in table)
+3. min (returns min value of column in table)
+4. avg
+5. count (returns no. records available in table)
+
+
+What is a group by clause?
+
+- Relies on aggregate function to group the matching records
+
+Write a query to display number of employees working in each department?
+`SELECT dept_id, count(*) as NumberOfEmployee from employee GROUP BY dept_id`
+
+```
+// OUTPUT:
+  1 2
+  2 1
+```
+
+Write a query to display number of employees working in each department where count is more than two?
+`SELECT dept_id, count(*) as NumberOfEmployee from employee GROUP BY dept_id HAVING count(*) > 2`
+
+```
+// OUTPUT:
+
+```
+
+
+## PL/SQL or T-SQL (Transact SQL) - Microsoft's SQL server
+
+Procedural Language/SQL
+
+This allows us to write programmatic logic (conditionals, variables, loops, functions, procedures, triggers, packages) within SQL
+
+
+Advantages:
+
+- Reusability (write once, execute many)
+
+- Group SQL commands into a module-like function or procedure
+
+- We can write scripts that execute based on the given condition
+
+
+// Write a script to create a procedure in MySQL:
+
+```
+DELIMITER $$ ;
+
+CREATE or REPLACE PROCEDURE addNumbers(in a int, in b int, out c int)
+BEGIN
+  SET c = a + b;
+END $$
+```
+
+// Write a script to create a function in MySQL:
+
+```
+DELIMITER $$ ;
+
+CREATE or REPLACE FUNCTION subtractNumbers(a int, b int) returns int
+BEGIN
+  return a+b;
+END $$
+```
+
+FUNCTION vs PROCEDURE  
+
+- Functions always have a return type whereas Procedures don't
+
+- Prodecures use `out` parameters to give something back to the caller
+
+
+
+
+
+## Indexes
+
+An index improves the performance of querying
+
+Types of indexes:
+
+1. Clustered
+
+  An index which is associated with *more than one* column
+
+
+2. Non-Clustered
+
+  An index which is associated with *only one* column
+
+
+
+## Batch Processing in SQL
+
+A process of executing a group of queries as a batch file
+
+
+```java
+Statement st = con.createStatement();
+
+st.addBatch("<SQL QUERY>");
+st.addBatch("<SQL QUERY>");
+st.addBatch("<SQL QUERY>");
+
+st.executeBatch();
+
+```
+
+
+
+
+------------------------------------------------------------------------------------------------
+
+
 
 
 
@@ -264,3 +439,18 @@ DB  || DB || DB
 ### What is a CLASSPATH?
 
 - A CLASSPATH is an environment variable which refers to .class files that are compressed in a .jar file
+
+
+### Types of Statements in JDBC API
+
+1. Statement
+
+  Offers less performance than PreparedStatement because it does not re-use the query
+
+
+2. PreparedStatement
+
+  Pre-compiles statements which re-uses the query to improve the performance
+
+
+3. CallableStatement
