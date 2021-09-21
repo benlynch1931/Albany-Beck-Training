@@ -14,8 +14,6 @@ MODULE\ 1/QUIZ\ QUESTIONS.java
 
 ALBANY\ BECK.iml
 
-MODULE\ 2/DEMOS/*
-MODULE\ 2/EXERCISES/*
 
 OracleExams/*
 out/**
@@ -31,3 +29,6 @@ TO\ DO.md
 *.xml
 *.class
 *.docx
+*.iml
+
+*.idea
